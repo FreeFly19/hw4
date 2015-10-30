@@ -1,5 +1,14 @@
 <?php
 
-require __DIR__ . '/../config/autoload.php';
+require __dir__ . '/../config/autoload.php';
 
-echo "Hi ALL!";
+use activerecord\User;
+
+var_dump(
+    User::find(
+        [
+            ['name', '=', 'Pisun'],
+            ['id', '>=', '17']
+        ]
+    )
+);
