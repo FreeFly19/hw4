@@ -2,13 +2,8 @@
 
 require __dir__ . '/../config/autoload.php';
 
-use activerecord\User;
+use ActiveRecord\User;
 
 var_dump(
-    User::find(
-        [
-            ['name', '=', 'Pisun'],
-            ['id', '>=', '17']
-        ]
-    )
+    User::findById(20)
 );

@@ -109,7 +109,7 @@ abstract class AbstractModel
      * @param $params array
      * @return mixed
      */
-    public static function find($params = [])
+    public static function find(array $params = [])
     {
         $cond = "";
 
@@ -141,5 +141,16 @@ abstract class AbstractModel
         return $result;
     }
 
+    /**
+     * @param $id int
+     */
+    public static function findById($id){
+        $res = static::find([
+                ['id', '=', $id]
+            ]);
+        if(count($res)==0)
+            return null;
+        return $res[0];
+    }
 
 }
